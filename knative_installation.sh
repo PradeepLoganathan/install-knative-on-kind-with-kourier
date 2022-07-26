@@ -37,8 +37,9 @@ EXTERNAL_IP="127.0.0.1"
 
 # Set the environment variable KNATIVE_DOMAIN as the DNS domain using nip.io
 # nip.io provides Free wildcard DNS services for IP addresses. The nip.io service is a 
-# “dead simple wildcard DNS for any IP Address”, and it allows you to map example domain names like magic.127.0.0.1.nip.io to 127.0.0.1
-# easy and powerful solution for generating domain names that map to a local app or Kubernetes cluster, and you can use this domain name 
+# “dead simple wildcard DNS for any IP Address”, and it allows you to map example domain names like 127.0.0.1.nip.io
+# to 127.0.0.1. It is an easy and powerful solution for generating domain names that map to a local app or Kubernetes cluster, 
+# and you can use this domain name 
 # with a public CA to avoid the need to use self-signed certificates
 # check the answers section for the A record
 KNATIVE_DOMAIN="$EXTERNAL_IP.nip.io"

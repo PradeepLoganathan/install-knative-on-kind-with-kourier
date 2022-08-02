@@ -8,6 +8,7 @@ kind --version
 # delete kind clusters as needed
 # kind delete cluster --name kind
 
+# kind is a tool for running local Kubernetes clusters using Docker container “nodes”.
 #create kind cluster
 kind create cluster --name knative-cluster --config kind-knative-cluster.yaml
 
@@ -79,10 +80,13 @@ kubectl get pods -n kourier-system
 kubectl get svc  -n kourier-system
 
 #use kn to create the service
+#kubectl apply --filename service.yaml
 kn service create hello \
 --image gcr.io/knative-samples/helloworld-go \
 --port 8080 \
 --env TARGET=Knative
+
+#kubectl get ksvc
 
 kubectl wait ksvc hello --all --timeout=-1s --for=condition=Ready
 
